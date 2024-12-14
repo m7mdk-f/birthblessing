@@ -1,15 +1,26 @@
-"use client"
+"use client";
 import ProducsPage from '@/app/components/ProducsPage';
 import { useParams } from 'next/navigation';
 import React from 'react';
-function Page() {
-  const { id } = useParams()
 
-  let title = ''
+// Define static params for the route
+export async function generateStaticParams() {
+  // Hardcoded list of possible IDs
+  const ids = ['1', '2', '3', 'Example']; 
+
+  return ids.map(id => ({
+    id,
+  }));
+}
+
+function Page() {
+  const { id } = useParams();
+
+  let title = '';
   if (id) {
-    title = id.toString().trim().replace('%20', ' ');
+    title = decodeURIComponent(id.toString().trim()); // Decode any URL-encoded characters
   }
-  
+
   return (
     <div>
       <h1 className="text-center md:text-4xl text-2xl my-5 font-semibold">{title}</h1>
