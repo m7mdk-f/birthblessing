@@ -3,15 +3,7 @@ import ProducsPage from '@/app/components/ProducsPage';
 import { useParams } from 'next/navigation';
 import React from 'react';
 
-// Define static params for the route
-export async function generateStaticParams() {
-  // Hardcoded list of possible IDs
-  const ids = ['1', '2', '3', 'Example']; 
 
-  return ids.map(id => ({
-    id,
-  }));
-}
 
 function Page() {
   const { id } = useParams();
