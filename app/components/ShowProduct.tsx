@@ -2,7 +2,6 @@
 import React, { useState } from 'react'
 import MainButton from './MainButton'
 import Button from './Slider/Button'
-import { CiHeart } from 'react-icons/ci'
 import { BiMinus, BiPlus, BiSolidShow } from 'react-icons/bi'
 import { IoIosStar, IoMdHeartEmpty } from 'react-icons/io'
 import Image from 'next/image'
