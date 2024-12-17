@@ -39,11 +39,15 @@ export function AppProvider({ children }: { children: ReactNode }) {
     };
 
 
-
     const getItem = (key: string) => {
         if (typeof window !== 'undefined') {
             const storedValue = localStorage.getItem(key);
-            return storedValue ? JSON.parse(storedValue) : [];
+            try {
+                return storedValue ? JSON.parse(storedValue) : [];
+            } catch (error) {
+                console.error(`Invalid JSON for key: ${key}`, error);
+                return [];
+            }
         }
         return [];
     };
