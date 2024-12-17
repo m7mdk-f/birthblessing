@@ -90,7 +90,7 @@ const Cart = () => {
                 initial={{ y: -1000 }}
                 animate={{ y: 0 }}
                 exit={{ y: -1000 }}
-                transition={{ duration: 0.3 }} className="py-4  bg-white fixed right-10 z-10 shadow-lg rounded-lg w-full max-w-md">
+                transition={{ duration: 0.3 }} className="py-4  bg-white fixed sm:right-10 right-0 z-10 shadow-lg rounded-lg w-full max-w-md">
                 <div className="max-h-96 overflow-y-auto px-4 space-y-4">
                     {cart.length > 0 ? (
                         cart.map(item => (
